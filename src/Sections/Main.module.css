@@ -1,0 +1,42 @@
+.Main {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  align-items: center;
+}
+
+.Input {
+  background-color: hsl(209, 23%, 22%);
+  border: 0;
+  outline: none;
+  color: hsl(0, 0%, 100%);
+  padding: 10px 20px 10px 35px;
+  width: 300px;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.Select {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: 0px;
+  outline: none;
+}
+
+.FaSearch {
+  position: absolute;
+  transform: translate(10px, 10px);
+}
+
+.Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.isLoading {
+  text-align: center;
+}
