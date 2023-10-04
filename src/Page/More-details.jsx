@@ -30,8 +30,10 @@ console.log(location)
             <li>Capital: {location.selectedCountry.Capital}</li>
           </ul>
           <ul>
-            {/* <li>Top Level Domain: {topLevelDomain}</li> */}
-            {/* <li>Currencies: {location.selectedCountry.Currencies}</li> */}
+            {/* <li>Top Level Domain: {location.selectedCountry.topLevelDomain.map(data, index => {
+              return <span key={index}>{data}</span>
+            })}</li> */}
+            <li>Currencies: {location.selectedCountry.Currencies}</li>
             <li>Languages: {location.Languages ? Object.values(location.Languages).join(', ') : 'N/A'}</li>
           </ul>
           <p>Border Countries:</p>

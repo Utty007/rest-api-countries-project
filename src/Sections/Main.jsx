@@ -35,9 +35,7 @@ const Main = () => {
   const searchedCountries = filteredCountries.filter((country) =>
     country.name.common.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  console.log(searchedCountries)
-
+  console.log(searchedCountries[0])
   return (
     <>
       <div className={Style.Main}>
@@ -83,8 +81,8 @@ const Main = () => {
                 Capital={data.capital}
                 nativeName={data.nativeName}
                 subRegion={data.subregion}
-                topLevelDomain={data.topLevelDomain}
-                Currencies={data.currencies}
+                topLevelDomain={data.tld}
+                Currencies={data.Currencies}
                 Languages={data.languages}
                 borderCountries={data.borders}
               />
