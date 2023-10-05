@@ -79,11 +79,11 @@ const Main = () => {
                 Population={data.population}
                 Region={data.region}
                 Capital={data.capital}
-                nativeName={data.nativeName}
+                nativeName={data.name.nativeName ? Object.entries(data.name.nativeName).map(([key, value]) => `${value?.official}, ${value?.common}`).join(', ') : 'N/A'}
                 subRegion={data.subregion}
                 topLevelDomain={data.tld}
-                Currencies={data.Currencies}
-                Languages={data.languages}
+                Currencies={data.currencies ? Object.values(data.currencies).map(({ name, symbol }) => `${name} (${symbol})`).join(', ') : 'N/A'}
+                Languages={data.languages ? Object.values(data.languages).join(', ') : 'N/A'}
                 borderCountries={data.borders}
               />
             );

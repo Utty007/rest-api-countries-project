@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux';
 // CountryDetails.js
 
 const MoreDetails = () => {
-    const selectedCountry = useSelector((state) => state.func);
-    const location = selectedCountry;
-console.log(location)
+  const selectedCountry = useSelector((state) => state.func);
+  const location = selectedCountry;
+  console.log(location)
   return (
     <div className="country-details">
       <button>
@@ -34,7 +34,7 @@ console.log(location)
               return <span key={index}>{data}</span>
             })}</li> */}
             <li>Currencies: {location.selectedCountry.Currencies}</li>
-            <li>Languages: {location.Languages ? Object.values(location.Languages).join(', ') : 'N/A'}</li>
+            <li>Languages: {location.selectedCountry.Languages}</li>
           </ul>
           <p>Border Countries:</p>
           {/* <ul>
