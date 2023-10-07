@@ -1,10 +1,12 @@
+/* eslint-disable react/prop-types */
 import Style from './CountryCard.module.css';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { funcActions } from '../Store/func-slice';
 
 const CountryCard = (props) => {
   const dispatch = useDispatch();
+  const isLightModeActive = useSelector(state => state.ui.lightModeActive)
 
   const handleCountryClick = () => {
     // Dispatch the action to set the selected country data in Redux.
@@ -32,9 +34,10 @@ const CountryCard = (props) => {
         to={{
         pathname: `/country/${Name}`
       }}
+      className={Style.countryLink}
       onClick={handleCountryClick}
       >
-    <div className={Style.CountryCard}>
+    <div className={`${Style.CountryCard} ${isLightModeActive ? Style.lightModeBg : Style.darkModeBg} ${isLightModeActive ? Style.lightModeText : Style.darkModeText}`}>
       <div className={Style.Flag}>
         <img src={Flag} />
       </div>

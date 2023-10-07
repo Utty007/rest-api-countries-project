@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createSlice } from "@reduxjs/toolkit";
 
 const funcSlice = createSlice({
@@ -6,10 +7,7 @@ const funcSlice = createSlice({
     reducers: {
         setSelectedCountry: (state, action) => {
             state.selectedCountry= action.payload
-        },
-        clearSelectedCountry: (state) => {
-            return null;
-        },
+        }
     }
 })
 

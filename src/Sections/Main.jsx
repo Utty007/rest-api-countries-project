@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import CountryCard from '../UI/CountryCard.jsx';
 import Style from './Main.module.css';
+import { useSelector } from 'react-redux';
 
 const Main = () => {
+  const isLightModeActive = useSelector(state => state.ui.lightModeActive)
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
@@ -35,14 +38,14 @@ const Main = () => {
   const searchedCountries = filteredCountries.filter((country) =>
     country.name.common.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  console.log(searchedCountries[0])
+
   return (
     <>
       <div className={Style.Main}>
         <div>
           <FaSearch className={Style.FaSearch} />
           <input
-            className={Style.Input}
+            className={`${Style.Input} ${isLightModeActive ? Style.lightModeBg : Style.darkModeBg} ${isLightModeActive ? Style.lightModeText : Style.darkModeText}`}
             type="text"
             placeholder="Search for a country..."
             value={searchQuery}
@@ -50,7 +53,7 @@ const Main = () => {
           />
         </div>
         <select
-          className={Style.Select}
+          className={`${Style.Select} ${isLightModeActive ? Style.lightModeBg : Style.darkModeBg} ${isLightModeActive ? Style.lightModeText : Style.darkModeText}`}
           onChange={(e) => setSelectedRegion(e.target.value)}
           value={selectedRegion}
         >
@@ -67,10 +70,10 @@ const Main = () => {
       {isLoading ? (
         <p className={Style.isLoading}>Loading...</p>
       ) : error ? (
-        <p>Error: {error.message}</p>
+        <p className={Style.isLoading}>Network Error: {error.message}</p>
       ) : (
         <div className={Style.Container}>
-          {searchedCountries.map((data, index) => {
+          {searchedCountries.length !== 0? searchedCountries.map((data, index) => {
             return (
               <CountryCard
                 key={index}
@@ -79,7 +82,7 @@ const Main = () => {
                 Population={data.population}
                 Region={data.region}
                 Capital={data.capital}
-                nativeName={data.name.nativeName ? Object.entries(data.name.nativeName).map(([key, value]) => `${value?.official}, ${value?.common}`).join(', ') : 'N/A'}
+                nativeName={data.name.nativeName ? Object.entries(data.name.nativeName).map(([key, value]) => `${value?.common}`).join(', ') : 'N/A'}
                 subRegion={data.subregion}
                 topLevelDomain={data.tld}
                 Currencies={data.currencies ? Object.values(data.currencies).map(({ name, symbol }) => `${name} (${symbol})`).join(', ') : 'N/A'}
@@ -87,7 +90,7 @@ const Main = () => {
                 borderCountries={data.borders}
               />
             );
-          })}
+          }) : <p className={Style.isLoading}>No Country Found!</p>}
         </div>
       )}
     </>

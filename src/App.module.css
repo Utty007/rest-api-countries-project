@@ -1,12 +1,11 @@
-:root {
+/* :root {
   --background-color-dark: hsl(207, 26%, 17%);
   --color-dark-mode: hsl(0, 0%, 100%);
   --background-color-light: hsl(0, 0%, 98%);
   --color-light-mode: hsl(200, 15%, 8%);
 }
 
-body {
-  margin: 0px;
+.darkMode {
   background-color: var(--background-color-dark);
   color: var(--color-dark-mode);
 }
@@ -14,4 +13,4 @@ body {
 .lightMode {
   background-color: var(--background-color-light);
   color: var(--color-light-mode);
-}
+} */

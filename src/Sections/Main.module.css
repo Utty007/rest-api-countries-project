@@ -6,7 +6,6 @@
 }
 
 .Input {
-  background-color: hsl(209, 23%, 22%);
   border: 0;
   outline: none;
   color: hsl(0, 0%, 100%);
@@ -16,9 +15,23 @@
   border-radius: 3px;
 }
 
-.Select {
+.lightModeBg {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.darkModeBg {
   background-color: hsl(209, 23%, 22%);
+}
+
+.lightModeText {
+  color: hsl(200, 15%, 8%);
+}
+
+.darkModeText {
   color: hsl(0, 0%, 100%);
+}
+
+.Select {
   padding: 10px 20px;
   border-radius: 3px;
   border: 0px;
@@ -39,4 +52,5 @@
 
 .isLoading {
   text-align: center;
+  font-size: 24px;
 }

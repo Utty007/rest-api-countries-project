@@ -1,0 +1,100 @@
+.moreDetails {
+  padding: 50px;
+}
+
+.countryDetails {
+  display: flex;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  transform: translateY(70px);
+}
+
+.countrydetail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.countrydetail > ul > li {
+  padding: 0 0 8px 0;
+}
+
+.backArrow {
+  transform: translateY(3px);
+}
+
+.backBtn {
+  background-color: hsl(209, 23%, 22%);
+  border: 0px;
+  border-radius: 3px;
+  padding: 6px 18px;
+  position: relative;
+  text-decoration: none;
+  top: -20px;
+}
+
+.borderCountriesContainer {
+  display: flex;
+}
+
+.borderCountries {
+  margin: 0 10px 0 0;
+  background-color: hsl(209, 23%, 22%);
+  padding: 5px 18px;
+  width: fit-content;
+}
+
+.flagImg {
+  width: 100%;
+}
+
+.leftPart {
+  width: 40%;
+}
+
+.detailsRight {
+  margin-left: 50px;
+  width: 40%;
+}
+
+.detailsRight > h2 {
+  margin-inline-start: 0;
+}
+
+.detailsRight > ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.rightList {
+  margin-left: 20px;
+}
+
+.countrydetail > ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.header {
+  font-weight: bolder;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.lightModeBg {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.darkModeBg {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.lightModeText {
+  color: hsl(200, 15%, 8%);
+}
+
+.darkModeText {
+  color: hsl(0, 0%, 100%);
+}
